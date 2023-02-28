@@ -1,39 +1,27 @@
-
 def Sqrt():
-    print('Please enter a number: ')
-
-    num = float(input())
+    num = float(input('Please enter a number > '))
     R = num ** (1/2)
 
     print('The result is ' + str(R))
     return
 
 def Square():
-    print('Please enter a number: ')
-
-    num = float(input())
+    num = float(input('Please enter a number > '))
     R = num ** 2
 
     print('The result is ' + str(R))
     return
 
 def Cube():
-    print('Please enter a number: ')
-
-    num = float(input())
+    num = float(input('Please enter a number > '))
     R = num ** 3
 
     print('The result is ' + str(R))
     return
 
 def Power():
-    print('Please enter a number: ')
-
-    num = float(input())
-
-    print('Please enter the power: ')
-
-    pwr = float(input())
+    num = float(input('Please enter a number > '))
+    pwr = float(input('Please enter the power > '))
 
     R = num ** pwr
 
@@ -41,9 +29,9 @@ def Power():
     return
 
 def other():
-    x = float(input('Enter x: '))
-    op = input('Enter the operator: ')
-    y = float(input('Enter y: '))
+    x = float(input('Enter x > '))
+    op = input('Enter the operator > ')
+    y = float(input('Enter y > '))
 
     if(op == '+'):
         result = float(x + y)
@@ -62,33 +50,48 @@ def other():
         print('The result is: ' + str(result))
     else:
         print('ERROR 404')
-        return
+    return
 
 def Main():
-    print('Do u want to: ')
-    print('1.square root a number')
-    print('2.square a number')
-    print('3.cube a number')
-    print('4.do any other power')
-    print('5.do the other types of calculations')
+    print('\33[33mBASIC CALCULATOR')
+    print('----------------')
+    print('\33[0m')
 
-    a = input()
+    while True:
+        print()
+        print('Do u want to: ')
+        print('1.square root a number')
+        print('2.square a number')
+        print('3.cube a number')
+        print('4.do any other power')
+        print('5.do the other types of calculations')
+        print('6. exit')
 
-    if(a == str(1)):
-        Sqrt()
-    elif(a == str(2)):
-        Square()
-    elif(a == str(3)):
-        Cube()
-    elif(a == str(4)):
-        Power()
-    elif(a == str(5)):
-        other()
-    else:
-        print('ERROR 404')
-        return
+        a = input('> ')
+
+        if(a == str(1)):
+            Sqrt()
+            continue
+        elif(a == str(2)):
+            Square()
+            continue
+        elif(a == str(3)):
+            Cube()
+            continue
+        elif(a == str(4)):
+            Power()
+            continue
+        elif(a == str(5)):
+            other()
+            continue
+        elif(a == str(6)):
+            break
+        else:
+            print('ERROR 404')
+            continue
+    return
 
 Main()
 
-print('Press enter to exit...')
-input()
+input('Press enter to exit...')
+exit()
